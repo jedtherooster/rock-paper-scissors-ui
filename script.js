@@ -54,5 +54,5 @@ function playGame() {
 
 
 // TODO
-// Make buttons Images
+// Add Font
 // Make website look nicer

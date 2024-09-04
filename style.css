@@ -24,3 +24,7 @@ h1, p, .computerChoiceDiv{
 .computerChoice, .playerScore, .computerScore {
     font-weight: bold;
 }
+
+.rock, .paper, .scissors {
+    width: 150px;
+}
