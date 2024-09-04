@@ -13,46 +13,42 @@ let userScore = 0;
 let comScore = 0;
 
 rockBtn.addEventListener('click', () => {
-    answer = 1;
+    answer = 'rock';
     result.textContent = ''
     playGame()
 })
 
 paperBtn.addEventListener('click', () => {
-    answer = 2;
+    answer = 'paper';
     result.textContent = ''
     playGame()
 })
 
 scissorsBtn.addEventListener('click', () => {
-    answer = 3;
+    answer = 'scissors';
     result.textContent = ''
     playGame()
 })
 
 function playGame() {
-    const computerAnswer = Math.floor(Math.random()*3)+1;
-
-    if (computerAnswer === 1) {
-        computerChoice.textContent = 'Rock'
-    } else if (computerAnswer === 2) {
-        computerChoice.textContent = 'Paper'
-    } else if (computerAnswer === 3) {
-        computerChoice.textContent = 'Scissors'
-    }
+    const choices = ['rock', 'paper', 'scissors']
+    const computerAnswer = choices[Math.floor(Math.random()*3)];
 
     console.log(computerAnswer)
     
     if (answer === computerAnswer) {
         result.textContent = 'Tie!'
-    } else if (answer === 1 && computerAnswer === 3 || answer === 2 && computerAnswer === 1 || answer === 3 && computerAnswer === 2) {
+        computerChoice.textContent = computerAnswer;
+    } else if (answer === 'rock' && computerAnswer === 'scissors' || answer === 'paper' && computerAnswer === 'rock' || answer === 'scissors' && computerAnswer === 'paper') {
         result.textContent = 'You Win!'
         userScore++;
         playerScore.textContent = userScore;
+        computerChoice.textContent = computerAnswer;
     } else {
         result.textContent = 'You Lose!'
         comScore++;
         computerScore.textContent = comScore;
+        computerChoice.textContent = computerAnswer;
     }
 }
 
