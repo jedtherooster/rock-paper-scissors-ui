@@ -8,8 +8,6 @@ const computerChoice = document.querySelector('.computerChoice')
 
 const result = document.querySelector('.result')
 
-let choices = ['rock', 'paper', 'scissors']
-
 let answer;
 let userScore = 0;
 let comScore = 0;
@@ -34,7 +32,15 @@ scissorsBtn.addEventListener('click', () => {
 
 function playGame() {
     const computerAnswer = Math.floor(Math.random()*3)+1;
-    computerChoice.textContent = computerAnswer;
+
+    if (computerAnswer === 1) {
+        computerChoice.textContent = 'Rock'
+    } else if (computerAnswer === 2) {
+        computerChoice.textContent = 'Paper'
+    } else if (computerAnswer === 3) {
+        computerChoice.textContent = 'Scissors'
+    }
+
     console.log(computerAnswer)
     
     if (answer === computerAnswer) {
@@ -49,3 +55,8 @@ function playGame() {
         computerScore.textContent = comScore;
     }
 }
+
+
+// TODO
+// Make buttons Images
+// Make website look nicer
