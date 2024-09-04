@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap');
+
 body {
     background: linear-gradient(90deg, #000000, #013481);
+    font-family: 'SUSE';
 }
 
 h1, p, .computerChoiceDiv{
@@ -19,6 +22,7 @@ h1, p, .computerChoiceDiv{
     justify-content: center;
     margin-top: 60px;
     color: white;
+    font-size: 28px;
 }
 
 .computerChoice, .playerScore, .computerScore {
@@ -28,3 +32,4 @@ h1, p, .computerChoiceDiv{
 .rock, .paper, .scissors {
     width: 150px;
 }
+
