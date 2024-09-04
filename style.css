@@ -1,0 +1,22 @@
+body {
+    background: linear-gradient(90deg, #000000, #013481);
+}
+
+h1, p, .computerChoice{
+    color: white;
+    text-align: center;
+}
+
+.inputs {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 12px;
+}
+
+.result {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+    color: white;
+}
