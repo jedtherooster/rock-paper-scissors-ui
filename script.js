@@ -6,36 +6,39 @@ const playerScore = document.querySelector('.playerScore')
 const computerScore = document.querySelector('.computerScore')
 const computerChoice = document.querySelector('.computerChoice')
 
+const playAgain = document.createElement('button')
+
 const result = document.querySelector('.result')
+const playAgainBtn = document.querySelector('.playAgain')
 
 let answer;
 let userScore = 0;
 let comScore = 0;
+let playing = true;
 
 rockBtn.addEventListener('click', () => {
     answer = 'rock';
-    result.textContent = ''
     playGame()
 })
-
+    
 paperBtn.addEventListener('click', () => {
     answer = 'paper';
-    result.textContent = ''
     playGame()
 })
-
+    
 scissorsBtn.addEventListener('click', () => {
     answer = 'scissors';
-    result.textContent = ''
     playGame()
 })
-
+    
 function playGame() {
+    if (!playing) return;
+    result.textContent = ''
     const choices = ['rock', 'paper', 'scissors']
     const computerAnswer = choices[Math.floor(Math.random()*3)];
 
     console.log(computerAnswer)
-    
+        
     if (answer === computerAnswer) {
         result.textContent = 'Tie!'
         computerChoice.textContent = computerAnswer;
@@ -44,13 +47,31 @@ function playGame() {
         userScore++;
         playerScore.textContent = userScore;
         computerChoice.textContent = computerAnswer;
+        if (userScore >= 5) {
+            gameWin();
+            playing = false;
+        }
     } else {
         result.textContent = 'You Lose!'
         comScore++;
         computerScore.textContent = comScore;
         computerChoice.textContent = computerAnswer;
+        if (comScore >= 5) {
+            gameLoss();
+            playing = false;
+        }
     }
 }
+
+
+function gameLoss() {
+    result.textContent = `You Lost! Scores were. User: ${userScore} Computer: ${comScore}`
+}
+
+function gameWin() {
+    result.textContent = `You Won! Scores were. User: ${userScore} Computer: ${comScore}`
+}
+
 
 
 // TODO
