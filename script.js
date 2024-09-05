@@ -6,10 +6,8 @@ const playerScore = document.querySelector('.playerScore')
 const computerScore = document.querySelector('.computerScore')
 const computerChoice = document.querySelector('.computerChoice')
 
-const playAgain = document.createElement('button')
-
 const result = document.querySelector('.result')
-const playAgainBtn = document.querySelector('.playAgain')
+const refresh = document.querySelector('.refresh')
 
 let answer;
 let userScore = 0;
@@ -66,10 +64,12 @@ function playGame() {
 
 function gameLoss() {
     result.textContent = `You Lost! Scores were. User: ${userScore} Computer: ${comScore}`
+    refresh.textContent = 'Refresh the page to play again'
 }
 
 function gameWin() {
     result.textContent = `You Won! Scores were. User: ${userScore} Computer: ${comScore}`
+    refresh.textContent = 'Refresh the page to play again'
 }
 
 
